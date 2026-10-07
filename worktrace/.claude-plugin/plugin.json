@@ -1,0 +1,34 @@
+{
+  "name": "worktrace",
+  "version": "0.1.0",
+  "description": "A persistent file tree and timeline of the files Claude reads, searches and changes, with summaries and exact diffs.",
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "summaries": {
+      "type": "string",
+      "title": "Summaries",
+      "description": "When to ask the session's model for two-sentence file summaries: on-select (when you open a file), or off (factual summaries only).",
+      "options": ["on-select", "off"],
+      "default": "on-select"
+    },
+    "summaryModel": {
+      "type": "string",
+      "title": "Summary model",
+      "description": "Model alias or id used for summaries, through the session's own sign-in.",
+      "default": "haiku"
+    },
+    "storeSensitive": {
+      "type": "boolean",
+      "title": "Store sensitive file contents",
+      "description": "Keep snapshots of files that look like credentials (.env, keys, secrets). Off by default: only hashes and sizes are kept.",
+      "default": false
+    },
+    "icons": {
+      "type": "string",
+      "title": "Icons",
+      "description": "emoji (📁 📄) or ascii (+ -) icons in the tree.",
+      "options": ["emoji", "ascii"],
+      "default": "emoji"
+    }
+  }
+}

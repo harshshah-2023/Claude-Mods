@@ -1,0 +1,38 @@
+{
+  "name": "decisioncritic",
+  "version": "0.1.0",
+  "description": "Reviews Claude's observable decisions with a separate critic model and shows evidence-backed criticism cards you can accept, challenge, implement and verify.",
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "criticModel": {
+      "type": "string",
+      "title": "Critic model",
+      "description": "Model alias or id used for the separate critic invocations (review, challenge, verification).",
+      "default": "sonnet"
+    },
+    "writerModel": {
+      "type": "string",
+      "title": "Writer model",
+      "description": "Model alias for the single code-writer subagent; 'inherit' uses the session model.",
+      "default": "inherit"
+    },
+    "autoReview": {
+      "type": "boolean",
+      "title": "Review after each turn",
+      "description": "When on, every completed main-thread turn is reviewed automatically.",
+      "default": true
+    },
+    "verifyCommand": {
+      "type": "string",
+      "title": "Verification command",
+      "description": "Optional shell command run after every correction round (for example 'uv run pytest -q'). Empty means only the critic verifies.",
+      "default": ""
+    },
+    "requirementsFiles": {
+      "type": "string",
+      "title": "Requirement documents",
+      "description": "Comma-separated files the critic treats as requirements, relative to the project root.",
+      "default": "CLAUDE.md"
+    }
+  }
+}

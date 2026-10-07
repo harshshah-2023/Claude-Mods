@@ -1,0 +1,20 @@
+{
+  "name": "claude-code-mods",
+  "description": "Claude Code mods: WorkTrace (a persistent file tree and timeline of Claude's file activity) and DecisionCritic (a separate critic model that reviews Claude's decisions).",
+  "owner": {
+    "name": "harshshah-2023",
+    "url": "https://github.com/harshshah-2023"
+  },
+  "plugins": [
+    {
+      "name": "worktrace",
+      "source": "./worktrace",
+      "description": "A persistent file tree and timeline of the files Claude reads, searches and changes, with summaries and exact diffs."
+    },
+    {
+      "name": "decisioncritic",
+      "source": "./decisioncritic",
+      "description": "Reviews Claude's observable decisions with a separate critic model and shows evidence-backed criticism cards you can accept, challenge, implement and verify."
+    }
+  ]
+}
